@@ -9,18 +9,14 @@ class RPS(commands.Cog):
     def __init__(self, client):
         self.client = client
 
-    @commands.command(name='challenge',
-                      # brief and description are what show up in the help menu
+    @commands.command(name='challenge', # brief and description are what show up in the help menu
                       brief='Play Rock, Paper, Scissors',
                       description='Play Rock, Paper, Scissors by pinging a friend; can also set how many rounds you want to play',
-                      # aliases give shorthands for the command
-                      aliases=['chall', 'rps'])
+                      aliases=['chall', 'rps']) # aliases give shorthands for the command
     async def challenge(self,
-                        ctx: commands.Context,
-                        # descriptions of parameters appear in help menu with this command specified
+                        ctx: commands.Context, # descriptions of parameters appear in help menu with this command specified
                         member: discord.Member = commands.parameter(description='The member you want to challenge'),
-                        rounds: int = commands.parameter(default=1,
-                                                         description='The number of rounds you want to play for, defaults to 1')):
+                        rounds: int = commands.parameter(default=1, description='The number of rounds you want to play for, defaults to 1')):
         """
         Play Rock, Paper, Scissors
         :param ctx: provides context for command call (who called it, which channel was it called in, etc)
